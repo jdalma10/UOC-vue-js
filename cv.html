@@ -14,28 +14,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+
+        <!-- Estil propi-->
+        <link rel="stylesheet" href="./assets/css/estil.css"> 
   <style>
 
-    body{
-        margin: 50px;
-    }
-      nav{
-          margin-bottom: 80px;
-      }
-      .left{
-          float:left;
-    
-      }
-      .right{
-          float:right;
-      }
-      .clear{
-          clear:both;
-      }
-      .eti{
-          font-weight: bold ;
-      } 
-
+  
+     
   
   </style>
   <script>
@@ -65,168 +50,186 @@
         </ul>
     </nav>
     
-    <header>
-        <h1>Curriculum Vitae</h1>
-        <p>Benvenuti a tutti</p>
-    </header>
+   
  
-   <aside class="left " style="margin-right: 30px;">
-        <br><br>
-        <ul class="">
-            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#dades" onclick="canviaContingut(this.innerHTML)">Dades personals</a></li>
-            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#estudis" onclick="canviaContingut(this.innerHTML)">Estudis</a></li>
-            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills" onclick="canviaContingut(this.innerHTML)">Skills</a></li>
-            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experiencia" onclick="canviaContingut(this.innerHTML)">Experiencia</a></li>
-            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#idiomes" onclick="canviaContingut(this.innerHTML)">Idiomes</a></li>
-        </ul>
-    
-    </aside>
-    <!-- <article id = "contingutMostra" class="left " ></article> -->
+    <div id="main" class="row">
 
-    <article id = "contingut" class="left" >
+        <header>
+            <h1>Curriculum Vitae</h1>
+            <p>Benvenuti a tutti</p>
+        </header>
 
-        <section class="" id="dades">
-            <br>
-            <h2 >Dades personals</h2>
-
-            <div class="row">
-                <div class="col-md-6 eti">Nom</div>
-                <div class="col-md-6">Giuseppe</div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 eti">Cognom</div>
-                <div class="col-md-6">Peroni</div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 eti">Email</div>
-                <div class="col-md-6">pperoni@gmail.com</div>
-            </div>
-        </section>
+        <aside class="col-md-3" style="position: sticky;
+        top: 30px;
+        display: block;">
+                <br><br>
+                <ul class="">
+                    <li class="nav-item"><a class="nav-link" href="#dades" onclick="canviaContingut(this.innerHTML)">Dades personals</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#estudis" onclick="canviaContingut(this.innerHTML)">Estudis</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills" onclick="canviaContingut(this.innerHTML)">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experiencia" onclick="canviaContingut(this.innerHTML)">Experiencia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#idiomes" onclick="canviaContingut(this.innerHTML)">Idiomes</a></li>
+                </ul>
             
-        
-        <section class="" id="estudis">
-            <br>
-            <h2 >Estudis</h2>
+            </aside>
+            <!-- <article id = "contingutMostra" class="left " ></article> -->
 
-       
+            <article id = "contingut" class="col-md-9">
 
-            <ul class="fa-ul mb-0">
-                <li> <span class="fa-li"><i class="fas fa-check"></i></span><strong>Enginyeria Informàtica de Gestió</strong><br>Universitat Pomepu Farra</li>
-                <li> <span class="fa-li"><i class="fas fa-check"></i></span><strong>Postrgrau Seguretat aplicacions</strong><br>Universitat Oberta 24h</li>
-                <li> <span class="fa-li"><i class="fas fa-check"></i></span><strong>Curs d'ensinistrador de grills</strong><br>Universitat de la vida</li>
-            </ul>
-        </section>
-        <section class="" id="experiencia">
-            <br>
-            <h2 >Experiència professional</h2>
-
-            <ul class="fa-ul mb-0">
-                <li> 
-                    <span class="fa-li">
-                    <i class="fas fa-check"></i></span>
-                    <strong>Pallasso a McDonalds Gavà</strong> (<em>Gavà</em>, 2021-2022)
-                    <br>Tasques de suport IT al grup d'investigació CREVER de la URV. Suport als usuaris, desenvolupament, instal·lació i manteniment de software, gestió del servidor intern i desenvolupament de pàgines web.
+                <section class="" id="dades">
                     <br>
-                </li>
-                <li> 
-                    <span class="fa-li">
-                        <i class="fas fa-check"></i></span><strong>Programador Senior a IBM</strong> (<em>Reus</em>, 2017-2021)
-                        <br>Desenvolupament de software tipus ERP enfocat a negocis d'hosteleria utilitzant un framework propi.
-                        <br>    
-                </li>
-                <li> 
-                    <span class="fa-li">
-                        <i class="fas fa-check"></i></span><strong>Domador de grills a Cirque su soleil</strong> (<em>Paris</em>, 2014-2017)
-                        <br>Desenvolupament d'acrobacies mortals<br>
-                </li>
-            </ul>
+                    <h2 >Dades personals</h2>
 
-    
-        </section>
-        
-        <section class="" id="skills">
-            <br>
-            <h2 >Skills</h2>
+                    <div class="row">
+                        
+                        <div class="col-md-3"><img style="width: 50%;" src="./assets/img/cage.png"  ></div>
+
+                    
+                        <div class="col-md-9">
+                        
             
-            <div class="">
-                <div class="subheading mb-3">Programming Languages & Tools</div>
-                <ul class="list-inline dev-icons">
-                    <li class="list-inline-item"><i class="fab fa-html5"></i></li>
-                    <li class="list-inline-item"><i class="fab fa-css3-alt"></i></li>
-                    <li class="list-inline-item"><i class="fab fa-js-square"></i></li>
-                    <li class="list-inline-item"><i class="fab fa-angular"></i></li>
-                    <li class="list-inline-item"><i class="fab fa-react"></i></li>
-                    <li class="list-inline-item"><i class="fab fa-node-js"></i></li>
-                    <li class="list-inline-item"><i class="fab fa-sass"></i></li>
-                    <li class="list-inline-item"><i class="fab fa-less"></i></li>
-                    <li class="list-inline-item"><i class="fab fa-wordpress"></i></li>
-                    <li class="list-inline-item"><i class="fab fa-gulp"></i></li>
-                    <li class="list-inline-item"><i class="fab fa-grunt"></i></li>
-                    <li class="list-inline-item"><i class="fab fa-npm"></i></li>
-                </ul>
-                <div class="subheading mb-3">Workflow</div>
-                <ul class="fa-ul mb-0">
-                    <li>
-                        <span class="fa-li"><i class="fas fa-check"></i></span>
-                        Mobile-First, Responsive Design
-                    </li>
-                    <li>
-                        <span class="fa-li"><i class="fas fa-check"></i></span>
-                        Cross Browser Testing & Debugging
-                    </li>
-                    <li>
-                        <span class="fa-li"><i class="fas fa-check"></i></span>
-                        Cross Functional Teams
-                    </li>
-                    <li>
-                        <span class="fa-li"><i class="fas fa-check"></i></span>
-                        Agile Development & Scrum
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <section class="resume-section" id="idiomes">
-            <br>
-            <h2>Idiomes</h2>
+                            <div class="col-md-6 eti">Nom</div>
+                            <div class="col-md-6">Giuseppe</div>
+                    
+            
+                            <div class="col-md-6 eti">Cognom</div>
+                            <div class="col-md-6">Peroni</div>
 
-           
-                <table class="table" style="height: 93px;" width="772">
-                    <tbody>
-                    <tr>
-                        <td style="width: 154.188px; text-align: center;"><span ><strong>Idioma</strong></span></td>
-                    <td style="width: 154.188px; text-align: center;"><span ><strong>Nivell baix</strong></span></td>
-                    <td style="width: 154.188px; text-align: center;"><span ><strong>Nivell mig</strong></span></td>
-                    <td style="width: 154.188px; text-align: center;"><span ><strong>Nivell alt</strong></span></td>
-                    <td style="width: 154.25px; text-align: center;"><span ><strong>Natiu</strong></span></td>
-                    </tr>
-                    <tr>
-                    <td style="width: 154.188px; text-align: center;"><span >Català</span></td>
-                    <td style="width: 154.188px; text-align: center;">&nbsp;</td>
-                    <td style="width: 154.188px; text-align: center;">&nbsp;</td>
-                    <td style="width: 154.188px; text-align: center;">&nbsp;</td>
-                    <td style="width: 154.25px; text-align: center;"><span >x</span></td>
-                    </tr>
-                    <tr>
-                    <td style="width: 154.188px; text-align: center;"><span >Espanyol</span></td>
-                    <td style="width: 154.188px; text-align: center;">&nbsp;</td>
-                    <td style="width: 154.188px; text-align: center;">&nbsp;</td>
-                    <td style="width: 154.188px; text-align: center;">&nbsp;</td>
-                    <td style="width: 154.25px; text-align: center;"><span >x</span></td>
-                    </tr>
-                    <tr>
-                    <td style="width: 154.188px; text-align: center;"><span >Anglès</span></td>
-                    <td style="width: 154.188px; text-align: center;">&nbsp;</td>
-                    <td style="width: 154.188px; text-align: center;">&nbsp;</td>
-                    <td style="width: 154.188px; text-align: center;"><span >x</span></td>
-                    <td style="width: 154.25px; text-align: center;"><span >&nbsp;</span></td>
-                    </tr>
-                    </tbody>
+                            
+                            <div class="col-md-6 eti">Email</div>
+                            <div class="col-md-6">pperoni@gmail.com</div>
+                        </div>
+                    </div>
+                
+                </section>
+                    
+                
+                <section class="col-md-6" id="estudis">
+                    <br>
+                    <h2 >Estudis</h2>
 
-              </table>
-        </section>
-        
-    </article>
-  
+            
+
+                    <ul class="fa-ul mb-0">
+                        <li> <span class="fa-li"><i class="fas fa-check"></i></span><strong>Enginyeria Informàtica de Gestió</strong><br>Universitat Pomepu Farra</li>
+                        <li> <span class="fa-li"><i class="fas fa-check"></i></span><strong>Postrgrau Seguretat aplicacions</strong><br>Universitat Oberta 24h</li>
+                        <li> <span class="fa-li"><i class="fas fa-check"></i></span><strong>Curs d'ensinistrador de grills</strong><br>Universitat de la vida</li>
+                    </ul>
+                </section>
+
+                <section class="col-md-6" id="skills">
+                    <br>
+                    <h2 >Skills</h2>
+                    
+                    <div class="">
+                        <div class="subheading mb-3">Programming Languages & Tools</div>
+                        <ul class="list-inline dev-icons">
+                            <li class="list-inline-item"><i class="fab fa-html5"></i></li>
+                            <li class="list-inline-item"><i class="fab fa-css3-alt"></i></li>
+                            <li class="list-inline-item"><i class="fab fa-js-square"></i></li>
+                            <li class="list-inline-item"><i class="fab fa-angular"></i></li>
+                            <li class="list-inline-item"><i class="fab fa-react"></i></li>
+                            <li class="list-inline-item"><i class="fab fa-node-js"></i></li>
+                            <li class="list-inline-item"><i class="fab fa-sass"></i></li>
+                            <li class="list-inline-item"><i class="fab fa-less"></i></li>
+                            <li class="list-inline-item"><i class="fab fa-wordpress"></i></li>
+                            <li class="list-inline-item"><i class="fab fa-gulp"></i></li>
+                            <li class="list-inline-item"><i class="fab fa-grunt"></i></li>
+                            <li class="list-inline-item"><i class="fab fa-npm"></i></li>
+                        </ul>
+                        <div class="subheading mb-3">Workflow</div>
+                        <ul class="fa-ul mb-0">
+                            <li>
+                                <span class="fa-li"><i class="fas fa-check"></i></span>
+                                Mobile-First, Responsive Design
+                            </li>
+                            <li>
+                                <span class="fa-li"><i class="fas fa-check"></i></span>
+                                Cross Browser Testing & Debugging
+                            </li>
+                            <li>
+                                <span class="fa-li"><i class="fas fa-check"></i></span>
+                                Cross Functional Teams
+                            </li>
+                            <li>
+                                <span class="fa-li"><i class="fas fa-check"></i></span>
+                                Agile Development & Scrum
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="" id="experiencia">
+                    <br>
+                    <h2 >Experiència professional</h2>
+
+                    <ul class="fa-ul mb-0">
+                        <li> 
+                            <span class="fa-li">
+                            <i class="fas fa-check"></i></span>
+                            <strong>Pallasso a McDonalds Gavà</strong> (<em>Gavà</em>, 2021-2022)
+                            <br>Tasques de suport IT al grup d'investigació CREVER de la URV. Suport als usuaris, desenvolupament, instal·lació i manteniment de software, gestió del servidor intern i desenvolupament de pàgines web.
+                            <br>
+                        </li>
+                        <li> 
+                            <span class="fa-li">
+                                <i class="fas fa-check"></i></span><strong>Programador Senior a IBM</strong> (<em>Reus</em>, 2017-2021)
+                                <br>Desenvolupament de software tipus ERP enfocat a negocis d'hosteleria utilitzant un framework propi.
+                                <br>    
+                        </li>
+                        <li> 
+                            <span class="fa-li">
+                                <i class="fas fa-check"></i></span><strong>Domador de grills a Cirque su soleil</strong> (<em>Paris</em>, 2014-2017)
+                                <br>Desenvolupament d'acrobacies mortals<br>
+                        </li>
+                    </ul>
+
+            
+                </section>
+                
+                
+                <section id="idiomes">
+                    <br>
+                    <h2>Idiomes</h2>
+
+                
+                        <table class="table" style="height: 93px;" width="772">
+                            <tbody>
+                            <tr>
+                                <td style="width: 154.188px; text-align: center;"><span ><strong>Idioma</strong></span></td>
+                            <td style="width: 154.188px; text-align: center;"><span ><strong>Nivell baix</strong></span></td>
+                            <td style="width: 154.188px; text-align: center;"><span ><strong>Nivell mig</strong></span></td>
+                            <td style="width: 154.188px; text-align: center;"><span ><strong>Nivell alt</strong></span></td>
+                            <td style="width: 154.25px; text-align: center;"><span ><strong>Natiu</strong></span></td>
+                            </tr>
+                            <tr>
+                            <td style="width: 154.188px; text-align: center;"><span >Català</span></td>
+                            <td style="width: 154.188px; text-align: center;">&nbsp;</td>
+                            <td style="width: 154.188px; text-align: center;">&nbsp;</td>
+                            <td style="width: 154.188px; text-align: center;">&nbsp;</td>
+                            <td style="width: 154.25px; text-align: center;"><span >x</span></td>
+                            </tr>
+                            <tr>
+                            <td style="width: 154.188px; text-align: center;"><span >Espanyol</span></td>
+                            <td style="width: 154.188px; text-align: center;">&nbsp;</td>
+                            <td style="width: 154.188px; text-align: center;">&nbsp;</td>
+                            <td style="width: 154.188px; text-align: center;">&nbsp;</td>
+                            <td style="width: 154.25px; text-align: center;"><span >x</span></td>
+                            </tr>
+                            <tr>
+                            <td style="width: 154.188px; text-align: center;"><span >Anglès</span></td>
+                            <td style="width: 154.188px; text-align: center;">&nbsp;</td>
+                            <td style="width: 154.188px; text-align: center;">&nbsp;</td>
+                            <td style="width: 154.188px; text-align: center;"><span >x</span></td>
+                            <td style="width: 154.25px; text-align: center;"><span >&nbsp;</span></td>
+                            </tr>
+                            </tbody>
+
+                    </table>
+                </section>
+                
+            </article>
+  </div>
   <footer></footer>
 </body>
 </html>
