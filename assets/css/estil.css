@@ -1,0 +1,26 @@
+#main{
+    margin: 50px;
+}
+
+nav{
+    margin-bottom: 80px;
+}
+.left{
+    float:left;
+    margin-right: 50px;
+}
+.clear{
+    clear:both;
+}
+.eti{
+    font-weight: bold ;
+} 
+
+p{text-align: justify;}
+img{width: 100%;}
+
+footer{
+    background-color: #333;
+    min-height: 100px;
+    width: 100% !important;
+}
