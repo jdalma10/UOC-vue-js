@@ -1,10 +1,19 @@
-#main{
-    margin: 50px;
-}
+/* Estils generals */
 
 nav{
     margin-bottom: 80px;
 }
+p{text-align: justify;}
+img{width: 100%;}
+
+footer{
+    background-color: #333;
+    min-height: 100px;
+    width: 100% !important;
+}
+
+
+/* Classes */
 .left{
     float:left;
     margin-right: 50px;
@@ -16,18 +25,16 @@ nav{
     font-weight: bold ;
 } 
 
-p{text-align: justify;}
-img{width: 100%;}
 
-footer{
-    background-color: #333;
-    min-height: 100px;
-    width: 100% !important;
-}
-
-.eti{
-    font-weight: bold ;
-} 
-mlateral{
+.mlateral{
     position: sticky;top: 45px; display: block;
 }
+
+
+/* Id */
+#main{
+    margin: 50px;
+}
+
+
+
