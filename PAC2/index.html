@@ -22,6 +22,9 @@
 
         <!-- Estil propi-->
         <link rel="stylesheet" href="./assets/css/estil.css"> 
+
+        <script defer type="module" src="./assets/js/pokedex.js"></script>
+
     
     </head>
 
@@ -29,9 +32,9 @@
 
         <nav>
             <ul class="nav navbar-nav navbar-default navbar-fixed-top">
-                <li class="nav-item"><a class="nav-link active" href="./index.html" >Pokedex</a></li>
-                <li class="nav-item"><a class="nav-link " href="./cv.html">Combat</a></li>
+                <li id="changeMode" style="float:left" class="nav-item"><a class="nav-link active" href="./index.html" >Mode</a></li>
             </ul>
+      
         </nav>
 
         <div id="main">
@@ -47,12 +50,15 @@
             </div>
             <header>
                 <h1></h1>   
+              
+           
+             
             </header>
 
             <article id = "contingut" class="container-fluid row" >
 
                 
-
+<!-- 
             
                 <br><br>
                 <section  id="portfoli" class="float-left clear" >
@@ -79,10 +85,10 @@
                         </div>
                         </div>
                 </div>
-                </section>
+                </section> -->
 
 
-                <br><br>
+                <!-- <br><br>
 
                 <section  id="portfoli" class="float-left clear" >
                     <br><br>
@@ -109,12 +115,53 @@
                         </div>
                         </div>
                 </div>
-                </section>
-               
+
+           
+                </section> -->
+
+                <section>
+                    <div id="view" class="card-list">
+
+                    </div>
+                </section>     
+
+                <template id="card-template">
+                    <div class="card">
+                        
+                        <a href="#">
+                            <div class="front">
+                                <img class="card-image" src="" alt="" />
+                                <h4 class="card-title"></h4>
+                                <div class=" col-sm-6">
+                                    <label for="file">Atac:</label>
+                                    <div class="w3-grey">
+                                        <div class="w3-container w3-red w3-center card-atac" style="width:67%">67</div>
+                                    </div><br>
+                                </div>
+                
+                                <div class=" col-sm-6">
+                                    <label for="file">Defensa:</label>
+                                    <div class="w3-grey">
+                                        <div class="w3-container w3-blue w3-center card-def" style="width:22%">22 </div>
+                                    </div><br>
+                                </div>
+                            </div>
+                            <div class="back" hidden >
+                                DASDASDAS
+                            </div>
+                        </a>
+                    </div>
+                </template>
+
             </article>
 
 
+         
+
+
         </div>
-        <footer>ddd</footer>
+        <footer></footer>
+
+
     </body>
 </html>
