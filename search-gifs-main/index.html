@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/main.css">
+  <script defer type='module' src="js/main.js"></script>
+  <title>Buscador de Gifs</title>
+</head>
+
+<body>
+  <main>
+    <header>
+      <h1>Buscador de Gif</h1>
+      <form class='search'>
+        <input class='search-input' type='text' placeholder='Buscar gifs...' />
+        <button class='search-submit'>Buscar</button>
+      </form>
+    </header>
+    <section>
+      <div id="view" class='card-list'></div>
+    </section>
+  </main>
+</body>
+
+<template id='card-template'>
+  <div class="card">
+    <div class="card-buttons">
+      <button>❤</button>
+    </div>
+    <a href="#" class='card-link'>
+      <h4 class='card-title'></h4>
+      <img loading="lazy" alt="" src="" class='card-image' />
+    </a>
+  </div>
+</template>
+
+</html>
