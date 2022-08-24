@@ -1,13 +1,16 @@
 
 
-
 export default function getPokemon({ keyword = '' } ) {
+
+	
+		//alert(keyword); // pero aqui, viene undefined
+	
 	
     const apiURL = `https://pokeapi.co/api/v2/pokemon/${keyword}?limit=10&offset=0`
 	return fetch(apiURL)
 		.then((res) => res.json())
 		.then((response) => {
-            console.log(response)
+            //console.log(response)
 			const { id } = response
 			const { sprites } = response
 			//console.log(sprites)
@@ -26,3 +29,5 @@ export default function getPokemon({ keyword = '' } ) {
 		
 		})
 }
+
+

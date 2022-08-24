@@ -23,7 +23,7 @@
         <!-- Estil propi-->
         <link rel="stylesheet" href="./assets/css/estil.css"> 
 
-        <script defer type="module" src="./assets/js/pokedex.js"></script>
+        <script defer type="module" src="./assets/js/combat.js"></script>
 
     
     </head>
@@ -39,12 +39,12 @@
 
         <div id="main">
             <div class="jumbotron jumbotron-fluid  text-center" style="padding:30px;">
-                <h1 class="display-4">Pokedex Pokembo</h1>
-                <p class="lead  text-center">Consulta aquí els teus pokembos preferits</p>
+                <h1 class="display-4">Kombat Pokembo</h1>
+                <p class="lead  text-center">Fes lluitar els teus pokembos i que vagin morint un a un</p>
                 <hr class="my-4">
                 <p class="lead  text-center">
-                    <a class="btn btn-primary btn-lg" href="./index.html" role="button">Pokedex</a>
-                    <a class="btn btn-primary btn-lg" href="./combat.html" role="button">Kombat</a>
+                <a class="btn btn-primary btn-lg" href="./index.html" role="button">Pokedex</a>
+                <a class="btn btn-primary btn-lg" href="./combat.html" role="button">Kombat</a>
 
                 </p>
             </div>
@@ -56,6 +56,10 @@
             </header>
 
             <article id = "contingut" class="container-fluid row" >
+
+                
+
+
                 <section>
                     <div id="view" class="card-list">
 
@@ -65,10 +69,15 @@
                 <template id="card-template">
                     <div class="card">
                         
-                        <!-- <a href="#"> -->
+                    
                             <div class="front">
                                 <img class="card-image" src="" alt="" />
                                 <h4 class="card-title"></h4>
+                                
+                                
+                            </div>
+                            <div class="back" hidden >
+                          
                                 
                                 <div class=" col-sm-6">
                                     <label for="file">Atac:</label>
@@ -83,14 +92,10 @@
                                     </div><br>
                                 </div>
                             </div>
-                            <div class="back" hidden >
-                                
                             </div>
-                        <!-- </a> -->
+                      
                     </div>
                 </template>
-
-
 
                 <section>
                     <div id="modal" class="modal">
@@ -104,24 +109,6 @@
                     </div>
                 
                 </section>    
-
-                <template id="card-info">
-
-                    <img class="card-image" src="" alt="" />
-                    <h4 class="card-title"></h4>
-                   
-                        <!-- Modal content -->
-                       <!--  <div class="modal-content">
-                          <span class="close">&times;</span>
-                          <p>Some text in the Modal..</p>
-
-                          <img class="card-image" src="" alt="" />
-                          <h4 class="card-title"></h4>
-                        </div> -->
-                      
-                      
-                </template>
-
 
 
 
