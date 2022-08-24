@@ -7,7 +7,8 @@ export default function getPokemon({ keyword = '' } ) {
 	return fetch(apiURL)
 		.then((res) => res.json())
 		.then((response) => {
-            //console.log(response)
+            console.log(response)
+			const { id } = response
 			const { sprites } = response
 			//console.log(sprites)
 			const { name } = response
@@ -19,7 +20,7 @@ export default function getPokemon({ keyword = '' } ) {
 			const atac = stats[1].base_stat
 			const def = stats[2].base_stat
 	
-			return {name, front_default, atac, def}
+			return {id, name, front_default, atac, def}
 		
 
 		

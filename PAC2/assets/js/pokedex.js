@@ -1,4 +1,5 @@
 import getPokemon from './pokeapi.js';
+import renderPoke from './funcions.js';
 
 
 
@@ -7,7 +8,7 @@ const submit = document.querySelector('.search-submit')
 const input = document.querySelector('.search-input')
 const view = document.querySelector('#view')
 
-
+// Carreguem 10 pokemons 
 var pokemons= []
 for(let x=1;x<10;x++){
     const keyword = x;
@@ -18,31 +19,12 @@ for(let x=1;x<10;x++){
   
 }
 
-console.log(pokemons);
-
-renderGifs(pokemons)
-
-function renderGifs(pokemons) {
-	const template = document.querySelector('#card-template').content
-	const fragment = document.createDocumentFragment()
-
-	pokemons.forEach(( poke ) => {
-		template.querySelector('.card-title').innerHTML = poke.name
-		template.querySelector('.card-image').setAttribute('src', poke.front_default)
-		template.querySelector('.card-image').setAttribute('alt', poke.name)
-        template.querySelector('.card-atac').innerHTML= poke.atac+"%"
-        template.querySelector('.card-atac').setAttribute('style', "width:"+poke.atac+"%")
-        template.querySelector('.card-def').innerHTML= poke.def+"%"
-        template.querySelector('.card-def').setAttribute('style', "width:"+poke.def+"%")
-		const clone = template.cloneNode(true)
-		fragment.appendChild(clone)
-	})
-
-	view.appendChild(fragment)
-}
+// Renderitzem els pokemons
+renderPoke(pokemons)
 
 
 
+// Trgetes giratories
 var elements = document.getElementsByClassName("card");
 
 Array.from(elements).forEach(function(element) {
