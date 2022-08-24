@@ -15,9 +15,9 @@ var pokemons = [];
 var pokeNumber=[];
 for (let x = 1; x < 10; x++) {
     let num = Math.floor(Math.random() * 100);
-   /*  while (pokeNumber.includes(num)){
+     while (pokeNumber.includes(num)){
         num = Math.floor(Math.random() * 100);
-    } */
+    } 
     console.log(num);
     pokeNumber.push(num);
     const keyword = num;
@@ -66,7 +66,8 @@ function gira(card) {
 
     if (numClics == 1) {
         card.querySelector('.back').removeAttribute('hidden');
-        atac = card.querySelector('.card-atac').innerHTML;
+        //guardem a atac el "15%" convertint-lo a 15
+        atac = +card.querySelector('.card-atac').innerHTML.slice(0, -1);
         cartaAtac = card.querySelector('.card-title').innerHTML;
 
         
@@ -74,7 +75,7 @@ function gira(card) {
     } else if (numClics == 2) {
 
         card.querySelector('.back').removeAttribute('hidden');
-        def = card.querySelector('.card-def').innerHTML;
+        def = +card.querySelector('.card-def').innerHTML.slice(0, -1);;
         cartaDef = card.querySelector('.card-title').innerHTML;
 
        //comprovació victoria
