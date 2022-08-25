@@ -108,27 +108,36 @@ document.getElementById("changeMode").addEventListener('click',function(){
     window.onclick = function(event) {
         if (event.target == modal) {
         modal.style.display = "none";
-        modal.querySelector('.modal-content').innerHTML=""
+        
         }
     }
 
 
     // Si fem cerca
 
+    var typingTimer;               
+    var doneTypingInterval = 1500;
     var searchBtn = document.getElementById("search");
+    searchBtn.addEventListener('click',cerca);
+
     var search = document.getElementById("searchInput");
 
-    search.addEventListener("keypress", function(event) {
-        // If the user presses the "Enter" key on the keyboard
-        if (event.key === "Enter") {
-          // Cancel the default action, if needed
-          event.preventDefault();
-          // Trigger the button element with a click
-          searchBtn.click();
-        
-        }
-      });
+    //on keyup, start the countdown
+    search.addEventListener('keyup', function () {
+        clearTimeout(typingTimer);
+        typingTimer = setTimeout(doneTyping, doneTypingInterval);
+    });
+  
+    //on keydown, clear the countdown 
+    search.addEventListener('keydown', function () {
+        clearTimeout(typingTimer);
+    });
+  
+    //user is "finished typing," do something
+    function doneTyping () {
+        searchBtn.click();
+    }
 
-    searchBtn.addEventListener('click',cerca);
+   
 
   
