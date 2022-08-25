@@ -1,5 +1,5 @@
 import getPokemon from './pokeapi.js';
-import {renderPoke, showInfo} from './funcions.js';
+import {loadPoke, renderPoke, showInfo, cerca} from './funcions.js';
 
 
 
@@ -9,53 +9,13 @@ const input = document.querySelector('.search-input')
 const view = document.querySelector('#view')
 const modal = document.querySelector('#modal')
 
-// Carreguem 10 pokemons 
-var pokemons= []
-for(let x=1;x<10;x++){
-    const keyword = x;
-    var pokemon = await getPokemon({ keyword });
-    console.log(pokemon)
-    pokemons.push(pokemon);
-  
-}
-
+// Carreguem  pokemons 
+var pokemons= await loadPoke();
 
 // Renderitzem els pokemons
-renderPoke(pokemons)
-
-
-/* // Lògica de si ampliem 1 pokemon
-
- // consultar si hi ha algun paràmetre a la URL
- let params = new URLSearchParams(document.location.search);
- let poke = params.get("poke");
-
+renderPoke(pokemons);
 
  
- if (poke) {
-
-    let card = document.querySelector("[href='?poke="+poke+"']");
-   
-    // modificar el text del missatge
-   card.querySelector('.back').innerHTML = `El paràmetre de la url és <strong>${poke}</strong><a id="torna" href="javascript:history.back()">Tornar</a>`;
-
-   card.querySelector('.front').setAttribute('hidden',true);      
-   card.querySelector('.back').removeAttribute('hidden');
-
- } else {
-    var elements = document.getElementsByClassName("card");
-
-    Array.from(elements).forEach(function(element) {
-       
-            element.querySelector('.front').removeAttribute('hidden');
-            element.querySelector('.back').setAttribute('hidden',true);
-        
-      });
-
- }
- */
-
-
 
 
 
@@ -148,3 +108,24 @@ document.getElementById("changeMode").addEventListener('click',function(){
         modal.style.display = "none";
         }
     }
+
+
+    // Si fem cerca
+
+    var searchBtn = document.getElementById("search");
+    var search = document.getElementById("searchInput");
+
+    search.addEventListener("keypress", function(event) {
+        // If the user presses the "Enter" key on the keyboard
+        if (event.key === "Enter") {
+          // Cancel the default action, if needed
+          event.preventDefault();
+          // Trigger the button element with a click
+          searchBtn.click();
+        
+        }
+      });
+
+    searchBtn.addEventListener('click',cerca);
+
+  

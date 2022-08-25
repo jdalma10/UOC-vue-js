@@ -1,32 +1,13 @@
 import getPokemon from './pokeapi.js';
-import { renderPoke, showInfo } from './funcions.js';
+import { renderPoke, loadPoke } from './funcions.js';
 
 
 
-
-const submit = document.querySelector('.search-submit')
-const input = document.querySelector('.search-input')
-const view = document.querySelector('#view')
 const modal = document.querySelector('#modal')
 
 
 // Carreguem 10 pokemons 
-var pokemons = [];
-var pokeNumber=[];
-for (let x = 1; x < 10; x++) {
-    let num = Math.floor(Math.random() * 100);
-     while (pokeNumber.includes(num)){
-        num = Math.floor(Math.random() * 100);
-    } 
-    console.log(num);
-    pokeNumber.push(num);
-    const keyword = num;
-    var pokemon = await getPokemon({ keyword });
-    //console.log(pokemon)
-    pokemons.push(pokemon);
-
-}
-
+var pokemons = await loadPoke();
 
 // Renderitzem els pokemons
 renderPoke(pokemons)
@@ -60,7 +41,7 @@ Array.from(cards).forEach(function (card) {
 
 
 function gira(card) {
-    console.log(card);
+
 
     numClics = numClics + 1;
 
