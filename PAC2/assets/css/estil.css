@@ -79,6 +79,7 @@ footer{
     text-transform: capitalize;
 }
 
+
 /* Id */
 #main{
     margin: 50px;
@@ -125,6 +126,10 @@ footer{
     color: black;
     text-decoration: none;
     cursor: pointer;
+  }
+
+  #modal img {
+    width: 50% !important;
   }
 
 

@@ -1,5 +1,5 @@
 import getPokemon from './pokeapi.js';
-import {loadPoke, renderPoke, showInfo, cerca} from './funcions.js';
+import {loadPoke, renderPoke, findPoke, showInfo, cerca} from './funcions.js';
 
 
 
@@ -8,6 +8,7 @@ const submit = document.querySelector('.search-submit')
 const input = document.querySelector('.search-input')
 const view = document.querySelector('#view')
 const modal = document.querySelector('#modal')
+const info = document.querySelector('#card-info')
 
 // Carreguem  pokemons 
 var pokemons= await loadPoke();
@@ -100,12 +101,14 @@ document.getElementById("changeMode").addEventListener('click',function(){
     // When the user clicks on <span> (x), close the modal
     span.onclick = function() {
         modal.style.display = "none";
+        modal.querySelector('.modal-content').innerHTML=""
     }
     
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
         if (event.target == modal) {
         modal.style.display = "none";
+        modal.querySelector('.modal-content').innerHTML=""
         }
     }
 
