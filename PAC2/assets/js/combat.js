@@ -46,7 +46,9 @@ function gira(card) {
     numClics = numClics + 1;
 
     if (numClics == 1) {
-        card.querySelector('.back').removeAttribute('hidden');
+        card.querySelector('.front').style.display='none';
+        card.querySelector('.back').style.display='contents';
+
         //guardem a atac el "15%" convertint-lo a 15
         atac = +card.querySelector('.card-atac').innerHTML.slice(0, -1);
         cartaAtac = card.querySelector('.card-title').innerHTML;
@@ -54,8 +56,9 @@ function gira(card) {
         
 
     } else if (numClics == 2) {
+        card.querySelector('.front').style.display='none';
+        card.querySelector('.back').style.display='contents';
 
-        card.querySelector('.back').removeAttribute('hidden');
         def = +card.querySelector('.card-def').innerHTML.slice(0, -1);;
         cartaDef = card.querySelector('.card-title').innerHTML;
 
@@ -102,7 +105,10 @@ function gira(card) {
 
     function tapaTotes(){
         Array.from(cards).forEach(function (card) {
-            card.querySelector('.back').setAttribute('hidden',true);
+    
+            card.querySelector('.front').style.display='contents';
+            card.querySelector('.back').style.display='none';
+
         });
     }
 

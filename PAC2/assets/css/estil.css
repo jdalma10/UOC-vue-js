@@ -6,14 +6,14 @@
 
 /*mode*/
 
-body.light, .jumbotron.light{
+body.light, .jumbotron.light, .modal.light, .navbar-default.light{
     --bg-color:#fff;
-    --text-color:#222;
+    --text-color:#272727;
     
 }
 
-body.dark, .jumbotron.dark{
-    --bg-color:#222;
+body.dark, .jumbotron.dark, .model.dark, .navbar-default.model.dark{
+    --bg-color:#272727;
     --text-color:#fff;
 }
 
@@ -30,7 +30,7 @@ nav{
 }
 
 p{text-align: justify;}
-img{width: 100%;}
+img{width:  10rem;}
 
 footer{
     background-color: #333;
@@ -69,15 +69,39 @@ footer{
     border: 1px solid var(--text-color);
     margin: 1em;
     display: flex;
-    flex-direction: column;
-    width: 90%;
+    flex-direction: row;
+    box-shadow: 1px 2px 6px #888;
+    padding: 2em;
 
+}
+
+.card:hover{
+    box-shadow: 2px 4px 12px #888;
 }
 
 .card-title{
     text-align: center;
     text-transform: capitalize;
+    display: inline;
+    vertical-align: middle;
+    margin-right: 60px;
 }
+
+
+.navbar-default{
+    background-color: var(--bg-color) !important;
+    color: var(--text-color);
+    box-shadow: 1px 1px 12px #555;
+}
+
+.card-type{
+    color: #fff!important;
+   
+    width: 100%;
+    text-align: center!important;
+  
+}
+
 
 
 /* Id */
@@ -106,11 +130,13 @@ footer{
   
   /* Modal Content/Box */
   .modal-content {
-    background-color: #fefefe;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 35%; /* Could be more or less, depending on screen size */
   }
   
   /* The Close Button */
@@ -128,8 +154,6 @@ footer{
     cursor: pointer;
   }
 
-  #modal img {
-    width: 50% !important;
-  }
+ 
 
 

@@ -70,7 +70,18 @@
                     <div id="view" class="card-list">
 
                     </div>
-                </section>     
+                </section> 
+                
+                <section>
+                    <div id="modal" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h4 class="card-title"></h4>
+  
+                        </div>
+                    </div>
+                
+                </section>    
 
                 <template id="card-template">
                     <div class="card">
@@ -100,37 +111,46 @@
                     </div>
                 </template>
 
+                <template id="card-info">
+                    <div class="card">
+                     
+                        
+                        <!-- <a href="#"> -->
+                            <div class="front col-sm-6"  style ="float:left;">
+                                <h2 class="card-title"></h2>
+                                <img class="card-image"  style ="float:left;"src="" alt="" />
+                                <img class="card-image-back" style ="float:left;" src="" alt="" />
+                               
 
 
-                <section>
-                    <div id="modal" class="modal">
-                        <div class="modal-content">
-                            <span class="close">&times;</span>
-                            <h4 class="card-title"></h4>
-  
-                        </div>
+                             
+                                
+                               
+                            </div>
+                            <div class="back col-sm-6"  style ="float:right;display:grid;" >
+                                 <div class=""  style ="float:right; margin-top: 3rem;">
+                                    
+                                    <label for="file">Atac:</label>
+                                    <div class="w3-grey">
+                                        <div class="w3-container w3-red w3-center card-atac" style="width:67%">67</div>
+                                    </div><br>
+                                    <label for="file">Defensa:</label>
+                                    <div class="w3-grey">
+                                        <div class="w3-container w3-blue w3-center card-def" style="width:22%">22 </div>
+                                    </div><br>
+                                </div>
+                                <div class="" style ="float:right;">
+                                    <label for="file">Tipus:</label>
+                             
+                                   
+                                    <div class="card-type" style="width:100%"> </div>
+                                <br>
+                                </div>
+
+                            </div>
+                        <!-- </a> -->
                     </div>
-                
-                </section>    
-
-           <!--      <template id="card-info">
-
-                    <img class="card-image" src="" alt="" />
-                    <h4 class="card-title"></h4>
-                   
-                      
-                         <div class="modal-content">
-                          <span class="close">&times;</span>
-                          <p>Some text in the Modal..</p>
-
-                          <img class="card-image" src="" alt="" />
-                          <h4 class="card-title"></h4>
-                        </div> 
-                      
-                      
-                </template> -->
-
-
+                </template>
 
 
             </article>

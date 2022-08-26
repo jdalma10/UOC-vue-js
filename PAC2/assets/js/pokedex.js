@@ -58,9 +58,9 @@ Array.from(elements).forEach(function(element) {
             body.classList.add("light");
         }
 
-        document.getElementById("changeMode").addEventListener('click',function(){
+        document.getElementById("changeMode").addEventListener('click',function(e){
         
-        
+            e.preventDefault();
         
             if(body.classList.contains('light')){
                 body.classList.remove("light");
@@ -108,6 +108,7 @@ Array.from(elements).forEach(function(element) {
         window.onclick = function(event) {
             if (event.target == modal) {
             modal.style.display = "none";
+            modal.querySelector('.modal-content').innerHTML=""
             
             }
         }
