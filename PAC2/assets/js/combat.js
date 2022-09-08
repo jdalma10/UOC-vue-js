@@ -6,11 +6,13 @@ import { renderPoke, loadPoke } from './funcions.js';
 const modal = document.querySelector('#modal')
 
 
-// Carreguem 10 pokemons 
-var pokemons = await loadPoke();
+// Carreguem  pokemons 
+var pokemons= await loadPoke();
 
 // Renderitzem els pokemons
-renderPoke(pokemons)
+pokemons.forEach(( poke ) => renderPoke(poke));
+
+
 
 
 // Logica de joc

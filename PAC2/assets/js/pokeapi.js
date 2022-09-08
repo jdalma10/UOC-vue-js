@@ -2,7 +2,9 @@
 
 export default function getPokemon({ keyword = '',limit = 10} ) {
 
-    const apiURL = `https://pokeapi.co/api/v2/pokemon/${keyword}?limit=${limit}&offset=0`
+    //const apiURL = `https://pokeapi.co/api/v2/pokemon/${keyword}?limit=${limit}&offset=0`
+	const apiURL = `https://pokeapi.co/api/v2/pokemon/${keyword}`
+
 	return fetch(apiURL)
 		.then((res) => res.json())
 		.then((response) => {

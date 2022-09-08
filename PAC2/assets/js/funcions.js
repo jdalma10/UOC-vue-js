@@ -2,7 +2,6 @@ import getPokemon from './pokeapi.js';
 
 // Carreguem 10 pokemons 
 
-
 export async function loadPoke(){
  
     let pokemons = [];
@@ -28,25 +27,30 @@ export async function loadPoke(){
     return pokemons;
 } 
 
-//borrar?
-export async function findPoke(search){
- 
-    var pokemons = [];
-    var pokemon;
-   // console.log(search);
-    search.forEach(function(poke){
-                       
-            //pokemon = await getPokemon({ keyword:poke });
-            pokemons.push(poke);
-    });
+
+export  function renderPoke(poke) {
+    const template = document.querySelector('#card-template').content
+    const fragment = document.createDocumentFragment()
     
+    template.querySelector('.card').setAttribute('id',poke.id);
+    template.querySelector('.card').setAttribute('data-id',poke.id);
 
-    return pokemons;
-} 
+    template.querySelector('.card-title').innerHTML = poke.name
+    template.querySelector('.card-image').setAttribute('src', poke.front_default)
+    template.querySelector('.card-image').setAttribute('alt', poke.name)
+    template.querySelector('.card-atac').innerHTML= poke.atac+""
+    template.querySelector('.card-atac').setAttribute('style', "width:"+poke.atac*0.8+"%")
+    template.querySelector('.card-def').innerHTML= poke.def+""
+    template.querySelector('.card-def').setAttribute('style', "width:"+poke.def*0.8+"%")
+    const clone = template.cloneNode(true)
+    fragment.appendChild(clone)
+    
+    view.appendChild(fragment)
+}
 
+/* 
 
-
-export  function renderPoke(pokemons) {
+export  function renderPoke2(pokemons) {
     const template = document.querySelector('#card-template').content
     const fragment = document.createDocumentFragment()
 
@@ -67,7 +71,7 @@ export  function renderPoke(pokemons) {
     })
 
     view.appendChild(fragment)
-}
+} */
 
 
 export async function showInfo(poke) {
@@ -101,7 +105,6 @@ export async function showInfo(poke) {
        
         var tip = document.createElement('div');
         
-         console.log(type.type.name);
         switch(type.type.name){
 
             case 'normal': tip.innerHTML = "Normal";  tip.style.backgroundColor='burlywood';break;
@@ -176,10 +179,10 @@ export async function showInfo(poke) {
    
     modal.querySelector('.modal-content').appendChild(fragment) ; 
 
-  
-
-
 } 
+
+
+
 
 export async function filtraPokemons(pokemons){
     var matchPokemons = []
@@ -198,15 +201,106 @@ export async function filtraPokemons(pokemons){
     }) 
 }
 
+  async function getPokemonList(){
+    return await getPokemon({limit:151});
+  }
+   
 
+  //PROVA
+  Promise.resolve(loadProva(1)).then((value) => {
+    console.log(value);
+    // expected output: 123
+  });
+  
+  function loadProva(num){
+      return  getPokemon({ keyword : num });
+  }
+
+
+  async function getPokemonInfo(id){
+    let poke =  await getPokemon(id);
+    renderPoke(poke);
+    return poke;
+  }
+
+  export async function backRenderer(){
+      //var modal = document.getElementById("modal");
+      var cards = document.getElementsByClassName("card");
+      console.log(cards);
+
+      Array.from(cards).forEach(function(card) {
+          card.addEventListener('mouseover', function(){
+              card.style.cursor = 'pointer';
+              card.onclick = function() {
+                  modal.style.display = "block";
+                  let pokemon = card.getAttribute('id');
+              
+                  showInfo(pokemon);
+              }
+          });
+      });
+  
+      
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+      
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+          modal.style.display = "none";
+          modal.querySelector('.modal-content').innerHTML=""
+      }
+      
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+          if (event.target == modal) {
+          modal.style.display = "none";
+          modal.querySelector('.modal-content').innerHTML=""
+          
+          }
+      }
+
+  }
+
+
+
+
+export async function cerca(){
+    var matchPokemons = []
+    let textCerca = document.getElementById("searchInput").value;
+    var pokemons =  await getPokemonList() ;
+    
+    pokemons.forEach(function(poke){
+            
+        if (poke.name.includes(textCerca)) {
+       
+            //obtenim l'id partint la url
+            let id = poke.url.split("/").reverse()[1];
+            matchPokemons.push(id);
+        }
+    });
+
+    matchPokemons.forEach(function(poke){
+       
+         
+        //carreguem els resultats
+        let c = getPokemonInfo({ keyword:poke });
+       
+
+  
+    });
+
+    
+
+    backRenderer();
+}
 
 // Buscar el pokemon/s
-export async function cerca () {
+export async function cerca2 () {
 
     var matchPokemons = []
     let textCerca = document.getElementById("searchInput").value;
 
-    var pokemon =  await getPokemon({limit:151})
+    var pokemon =  getPokemonList() // await getPokemon({limit:151})
     .then(function(llistaSencera){
         //console.log(llistaSencera);
         llistaSencera.forEach(function(poke){
@@ -230,7 +324,8 @@ export async function cerca () {
         match.forEach(function(poke){
             console.log(poke);
 
-            pokemon = getPokemon({ keyword:poke });
+            pokemon =  getPokemonInfo({ keyword:poke });
+            console.log(pokemon);
             pokemons.push(pokemon);
         });
       

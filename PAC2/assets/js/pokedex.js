@@ -1,5 +1,5 @@
 import getPokemon from './pokeapi.js';
-import {loadPoke, renderPoke, findPoke, showInfo, cerca} from './funcions.js';
+import {loadPoke, renderPoke, showInfo, cerca, backRenderer} from './funcions.js';
 
 
 
@@ -14,7 +14,8 @@ const info = document.querySelector('#card-info')
 var pokemons= await loadPoke();
 
 // Renderitzem els pokemons
-renderPoke(pokemons);
+pokemons.forEach(( poke ) => renderPoke(poke));
+
 
  
 
@@ -79,6 +80,8 @@ Array.from(elements).forEach(function(element) {
 
     // lLÒGICA DE AMPLIAR INFO POKEMON
 
+    backRenderer();
+/* 
         //var modal = document.getElementById("modal");
         var cards = document.getElementsByClassName("card");
 
@@ -111,7 +114,7 @@ Array.from(elements).forEach(function(element) {
             modal.querySelector('.modal-content').innerHTML=""
             
             }
-        }
+        } */
 
 
     // LÒGICA DE CERCA
@@ -136,9 +139,10 @@ Array.from(elements).forEach(function(element) {
     
         //user is "finished typing," do something
         function doneTyping () {
+            //eliminem pokemons carregats random
+            document.getElementById('view').innerHTML = "";
+            //executem cerca
             searchBtn.click();
         }
-
-   
 
   
