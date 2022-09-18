@@ -11,7 +11,7 @@ const modal = document.querySelector('#modal')
 const info = document.querySelector('#card-info')
 
 // Carreguem  pokemons 
-var pokemons= await loadPoke();
+var pokemons= await loadPoke(); 
 
 // Renderitzem els pokemons
 pokemons.forEach(( poke ) => renderPoke(poke));
