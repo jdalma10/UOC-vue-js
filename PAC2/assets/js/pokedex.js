@@ -1,3 +1,5 @@
+// comentari: bon úl de ES6 amb import/export, és una aproximació a l'ús que en farem en Vue
+
 import getPokemon from './pokeapi.js';
 import {loadPoke, renderPoke, showInfo, cerca, backRenderer} from './funcions.js';
 

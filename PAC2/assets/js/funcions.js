@@ -1,3 +1,6 @@
+// cometari: en general, s'hauria de netejar el codi que no s'utilitza, ja que pot generar certa dificultat a l'hora de seguir el codi i mirar com funciona.
+// comentari: bon punt que les funcions estiguin comentades amb una breu explicació del que fan
+
 import getPokemon from './pokeapi.js';
 
 // Carreguem 10 pokemons 
@@ -12,6 +15,7 @@ export async function loadPoke(){
         let num = Math.floor(Math.random() * 151);
 
         //mirem que no estigui ja carregat
+        // comentari: bon control de repetits
         while (pokeNumber.includes(num)||num==0){
             num = Math.floor(Math.random() * 151);
         } 
@@ -27,7 +31,7 @@ export async function loadPoke(){
     return pokemons;
 } 
 
-
+// comentari: bon ús de templates per carregar el contingut
 export  function renderPoke(poke) {
     const template = document.querySelector('#card-template').content
     const fragment = document.createDocumentFragment()
@@ -105,6 +109,7 @@ export async function showInfo(poke) {
        
         var tip = document.createElement('div');
         
+        // comentari: bon detall el de donar estils diferents segons el tipus
         switch(type.type.name){
 
             case 'normal': tip.innerHTML = "Normal";  tip.style.backgroundColor='burlywood';break;
@@ -180,8 +185,6 @@ export async function showInfo(poke) {
     modal.querySelector('.modal-content').appendChild(fragment) ; 
 
 } 
-
-
 
 
 export async function filtraPokemons(pokemons){
@@ -263,7 +266,11 @@ export async function filtraPokemons(pokemons){
 
 
 
-
+/**
+ * comentari: el filtre estava plentejat per filtrar sobre el pokemons que ja s'han carregat, és a dir els que es mostren per patalla.
+ * D'aquesta manera només cal recorrer-los i canviar la visibilitat display:block/none
+ * Has plantejat una bona alternativa, fent la cerca de qualsevol Pokemon de la PokeAPI, bona feina!
+ */
 export async function cerca(){
     var matchPokemons = []
     let textCerca = document.getElementById("searchInput").value;
